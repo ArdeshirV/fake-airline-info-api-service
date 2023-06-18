@@ -15,6 +15,13 @@ import (
 type Timestamp time.Time
 
 const (
+	ParamTime = "time"
+	ParamCityA = "city_a"
+	ParamCityB = "city_b"
+	ParamReturn = "return"
+	ParamReserve = "reserve"
+	ParamFlightNo = "flightno"
+	TimeLayout = "2006-01-02"
 	// TODO: This string should be replaced with README.md file and it's contents should be raw HTML not markdown
 	RootPage = "<strong>Fake Airline Information Service API</strong><br/><br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/the-go-dragons/fake-airline-info-service\">Check the project in Github</a>"
 )
@@ -57,7 +64,7 @@ func listFlightsHandler(ctx echo.Context) error {
 		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
 	}
 
-	flightNo := ctx.QueryParam("flightno")
+	flightNo := ctx.QueryParam(ParamFlightNo)
 	if flightNo != "" {
 		filteredFlights := make([]models.Flight, 0)
 		for _, flight := range data {
@@ -68,9 +75,9 @@ func listFlightsHandler(ctx echo.Context) error {
 		return echoJSON(ctx, http.StatusOK, filteredFlights)
 	} else {
 		// The solution of Ticket-2 goes here
-		cityA := ctx.QueryParam("city_a")
-		cityB := ctx.QueryParam("city_b")
-		timeD := ctx.QueryParam("time")
+		cityA := ctx.QueryParam(ParamCityA)
+		cityB := ctx.QueryParam(ParamCityB)
+		timeD := ctx.QueryParam(ParamTime)
 		if timeD != "" || cityA != "" || cityB != "" {
 			errMsg := ""
 			dataIsNotEnough := false
@@ -92,8 +99,7 @@ func listFlightsHandler(ctx echo.Context) error {
 			} else {
 				// Search to find all flights from cityA to cityB in specified date-time
 				filteredFlights := make([]models.Flight, 0)
-				const timeLayout = "2006-01-02"
-				specifiedDate, err := time.Parse(timeLayout, timeD)
+				specifiedDate, err := time.Parse(TimeLayout, timeD)
 				if err != nil {
 					errMsg := fmt.Sprintf("Failed to parse \"time\". %v", err)
 					return ctx.HTML(http.StatusInternalServerError, htmlErrorMsgString(errMsg))
