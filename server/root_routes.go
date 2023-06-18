@@ -25,10 +25,21 @@ func rootRoutes(e *echo.Echo) {
 	e.GET("/airplanes", listAirplanesHandler)
 	e.GET("/cities", listCitiesHandler)
 	e.GET("/departure_dates", listDepartureDatesHandler)
+	e.POST("/reserve", listReserveHandler)
 }
 
 func rootHandler(ctx echo.Context) error {
 	return ctx.HTML(http.StatusOK, RootPage)
+}
+
+func listReserveHandler(ctx echo.Context) error {
+	data, err := service.GetFlights()
+	if err != nil {
+		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+	}
+	// The solution of Ticket-4 goes here
+
+	return echoJSON(ctx, http.StatusOK, data)
 }
 
 func listAirplanesHandler(ctx echo.Context) error {
@@ -53,10 +64,6 @@ func listFlightsHandler(ctx echo.Context) error {
 			if flight.FlightNo == flightNo {
 				filteredFlights = append(filteredFlights, flight)
 			}
-		}
-		if len(filteredFlights) > 0 {
-			// The solution of Ticket-4 goes here - flightNo
-			;
 		}
 		return echoJSON(ctx, http.StatusOK, filteredFlights)
 	} else {
