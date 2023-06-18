@@ -457,7 +457,7 @@
     },
     {
         "ID": 13,
-        "FlightNo": "KS927",
+        "FlightNo": "VN931",
         "DepartureID": 643,
         "Departure": {
             "Name": "Beijing Daxing International Airport",
@@ -495,7 +495,7 @@
     },
     {
         "ID": 14,
-        "FlightNo": "KS927",
+        "FlightNo": "JI951",
         "DepartureID": 643,
         "Departure": {
             "Name": "MehrAbad International Airport",
@@ -533,7 +533,7 @@
     },
     {
         "ID": 15,
-        "FlightNo": "KS927",
+        "FlightNo": "KZ987",
         "DepartureID": 643,
         "Departure": {
             "Name": "MehrAbad International Airport",
