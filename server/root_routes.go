@@ -9,6 +9,7 @@ import (
 	"github.com/labstack/echo/v4"
 	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	"github.com/the-go-dragons/fake-airline-info-service/service"
+	"github.com/the-go-dragons/fake-airline-info-service/config"
 )
 
 type Timestamp time.Time
@@ -152,7 +153,9 @@ func AreDatesEqual(a, b time.Time) bool {
 }
 
 func echoJSON(ctx echo.Context, status int, data interface{}) error {
-	// TODO: Implement <config.IsDebugModeEnable()>
-	// return ctx.JSON(status, data)
-	return ctx.JSONPretty(status, data, "    ")
+	if config.IsDebugModeEnabled() {
+		return ctx.JSONPretty(status, data, "    ")
+	} else {
+		return ctx.JSON(status, data)
+	}
 }
