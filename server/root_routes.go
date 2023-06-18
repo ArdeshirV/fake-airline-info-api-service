@@ -22,8 +22,24 @@ const (
 	ParamReserve = "reserve"
 	ParamFlightNo = "flightno"
 	TimeLayout = "2006-01-02"
-	// TODO: This string should be replaced with README.md file and it's contents should be raw HTML not markdown
-	RootPage = "<strong>Fake Airline Information Service API</strong><br/><br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/the-go-dragons/fake-airline-info-api-service\">Check the project in Github</a>"
+	RootPage = `<strong>Fake Airline Information Service API</strong><br/><br/>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/the-go-dragons/fake-airline-info-api-service">Check the project in Github</a><br/><br/>
+<pre>
+	<a href="http://localhost:3000" target="_blank"  rel="noopener noreferrer">http://localhost:3000</a>
+	<a href="http://localhost:3000/cities" target="_blank" rel="noopener noreferrer">http://localhost:3000/cities</a>
+	<a href="http://localhost:3000/airplanes" target="_blank" rel="noopener noreferrer">http://localhost:3000/airplanes</a>
+	<a href="http://localhost:3000/departure_dates" target="_blank" rel="noopener noreferrer">http://localhost:3000/departure_dates</a>
+	<a href="http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14</a>
+</pre>
+<pre>
+	curl -X GET "http://localhost:3000/cities"
+	curl -X GET "http://localhost:3000/airplanes"
+	curl -X GET "http://localhost:3000/departure_dates"
+	curl -X GET "http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14"
+	<br/>
+	curl -X POST "http://localhost:3000/reserve/return"
+	curl -X POST "http://localhost:3000/reserve/reserve"
+</pre>`
 )
 
 func rootRoutes(e *echo.Echo) {
@@ -125,11 +141,7 @@ func listFlightsHandler(ctx echo.Context) error {
 						filteredFlights = append(filteredFlights, flight)
 					}
 				}
-				if len(filteredFlights) > 0 {
-					return echoJSON(ctx, http.StatusOK, filteredFlights)
-				}
-				// Not found
-				return echoJSON(ctx, http.StatusOK, []models.Flight{})
+				return echoJSON(ctx, http.StatusOK, filteredFlights)
 			}
 		} else {
 			// Ticket-1 Solution
