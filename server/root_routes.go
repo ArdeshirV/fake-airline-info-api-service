@@ -9,13 +9,21 @@ import (
 	"github.com/labstack/echo/v4"
 	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	"github.com/the-go-dragons/fake-airline-info-service/service"
+	"github.com/the-go-dragons/fake-airline-info-service/config"
 )
 
 type Timestamp time.Time
 
 const (
+	ParamTime = "time"
+	ParamCityA = "city_a"
+	ParamCityB = "city_b"
+	ParamReturn = "return"
+	ParamReserve = "reserve"
+	ParamFlightNo = "flightno"
+	TimeLayout = "2006-01-02"
 	// TODO: This string should be replaced with README.md file and it's contents should be raw HTML not markdown
-	RootPage = "<strong>Fake Airline Information Service API</strong><br/><br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/the-go-dragons/fake-airline-info-service\">Check the project in Github</a>"
+	RootPage = "<strong>Fake Airline Information Service API</strong><br/><br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/the-go-dragons/fake-airline-info-api-service\">Check the project in Github</a>"
 )
 
 func rootRoutes(e *echo.Echo) {
@@ -24,10 +32,35 @@ func rootRoutes(e *echo.Echo) {
 	e.GET("/airplanes", listAirplanesHandler)
 	e.GET("/cities", listCitiesHandler)
 	e.GET("/departure_dates", listDepartureDatesHandler)
+	e.POST("/reserve", listReserveHandler)
 }
 
 func rootHandler(ctx echo.Context) error {
 	return ctx.HTML(http.StatusOK, RootPage)
+}
+
+func listReserveHandler(ctx echo.Context) error {
+	flights, err := service.GetFlights()
+	if err != nil {
+		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+	}
+	flightNo := ctx.QueryParam(ParamFlightNo)
+	if flightNo != "" {
+		filteredFlights := make([]models.Flight, 0)
+		for _, flight := range flights {
+			if flight.FlightNo == flightNo {
+				filteredFlights = append(filteredFlights, flight)
+			}
+		}
+		if len(filteredFlights) > 0 {
+			selectedFlight := filteredFlights[0]
+			// The solution of Ticket-4 goes here
+			//
+			return echoJSON(ctx, http.StatusOK, selectedFlight)
+		}
+	}
+
+	return echoJSON(ctx, http.StatusOK, "Nothing")
 }
 
 func listAirplanesHandler(ctx echo.Context) error {
@@ -45,7 +78,7 @@ func listFlightsHandler(ctx echo.Context) error {
 		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
 	}
 
-	flightNo := ctx.QueryParam("flightno")
+	flightNo := ctx.QueryParam(ParamFlightNo)
 	if flightNo != "" {
 		filteredFlights := make([]models.Flight, 0)
 		for _, flight := range data {
@@ -53,15 +86,12 @@ func listFlightsHandler(ctx echo.Context) error {
 				filteredFlights = append(filteredFlights, flight)
 			}
 		}
-		if len(filteredFlights) > 0 {
-			// The solution of Ticket-4 goes here - flightNo
-		}
 		return echoJSON(ctx, http.StatusOK, filteredFlights)
 	} else {
 		// The solution of Ticket-2 goes here
-		cityA := ctx.QueryParam("city_a")
-		cityB := ctx.QueryParam("city_b")
-		timeD := ctx.QueryParam("time")
+		cityA := ctx.QueryParam(ParamCityA)
+		cityB := ctx.QueryParam(ParamCityB)
+		timeD := ctx.QueryParam(ParamTime)
 		if timeD != "" || cityA != "" || cityB != "" {
 			errMsg := ""
 			dataIsNotEnough := false
@@ -83,8 +113,7 @@ func listFlightsHandler(ctx echo.Context) error {
 			} else {
 				// Search to find all flights from cityA to cityB in specified date-time
 				filteredFlights := make([]models.Flight, 0)
-				const timeLayout = "2006-01-02"
-				specifiedDate, err := time.Parse(timeLayout, timeD)
+				specifiedDate, err := time.Parse(TimeLayout, timeD)
 				if err != nil {
 					errMsg := fmt.Sprintf("Failed to parse \"time\". %v", err)
 					return ctx.HTML(http.StatusInternalServerError, htmlErrorMsgString(errMsg))
@@ -152,7 +181,9 @@ func AreDatesEqual(a, b time.Time) bool {
 }
 
 func echoJSON(ctx echo.Context, status int, data interface{}) error {
-	// TODO: Implement <config.IsDebugModeEnable()>
-	// return ctx.JSON(status, data)
-	return ctx.JSONPretty(status, data, "    ")
+	if config.IsDebugModeEnabled() {
+		return ctx.JSONPretty(status, data, "    ")
+	} else {
+		return ctx.JSON(status, data)
+	}
 }

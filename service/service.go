@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"time"
 
 	models "github.com/the-go-dragons/fake-airline-info-service/domain"
+	"github.com/the-go-dragons/fake-airline-info-service/config"
 )
 
 const (
@@ -33,7 +33,7 @@ func GetAirplanes() ([]models.Airplane, error) {
 }
 
 func GetFlights() ([]models.Flight, error) {
-	flightData, err := ioutil.ReadFile("data/flight.json")
+	flightData, err := os.ReadFile("data/flight.json")
 	if err != nil {
 		return nil, errorHandler("Failed to read flight data", err)
 	}
@@ -88,8 +88,10 @@ func GetDepartureDates() ([]time.Time, error) {
 
 func errorHandler(message string, err error) error {
 	errMsgHTML := fmt.Sprintf("%s %v\n", message, err)
-	errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n", BoldRed, message, Red, err, Normal)
-	log.New(os.Stderr, "\n", 1).Print(errMsgColor)
+	if config.IsDebugModeEnabled() {
+		errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n", BoldRed, message, Red, err, Normal)
+		log.New(os.Stderr, "\n", 1).Print(errMsgColor)
+	}
 
 	return errors.New(errMsgHTML)
 }
