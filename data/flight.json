@@ -1,0 +1,762 @@
+[
+    {
+        "ID": 1,
+        "FlightNo": "EAX123",
+        "DepartureID": 112,
+        "Departure": {
+            "Name": "John F. Kennedy International Airport",
+            "CityID": 1,
+            "City": {
+                "Name": "New York"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 224,
+        "Destination": {
+            "Name": "San Francisco International Airport",
+            "CityID": 2,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T12:00:00Z",
+        "ArrivalTime": "2023-06-14T17:00:00Z",
+        "AirplaneID": 1,
+        "Airplane": {
+            "Name": "Happy Airplane",
+            "AirlineID": 1,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 0,
+        "Price": 599,
+        "RemainingCapacity": 12,
+        "CancelCondition": "There is no cancelation policy :)"
+    },
+    {
+        "ID": 2,
+        "FlightNo": "EAX254",
+        "DepartureID": 718,
+        "Departure": {
+            "Name": "San Francisco International Airport",
+            "CityID": 2,
+            "City": {
+                "Name": "San Francisco"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 198,
+        "Destination": {
+            "Name": "John F. Kennedy International Airport",
+            "CityID": 1,
+            "City": {
+                "Name": "New York"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T12:00:00Z",
+        "ArrivalTime": "2023-06-14T12:00:00Z",
+        "AirplaneID": 2,
+        "Airplane": {
+            "Name": "Happy Airplane",
+            "AirlineID": 1,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 2,
+        "Price": 199,
+        "RemainingCapacity": 12,
+        "CancelCondition": "There is no cancelation policy :)"
+    },
+    {
+        "ID": 3,
+        "FlightNo": "EB982",
+        "DepartureID": 423,
+        "Departure": {
+            "Name": "Shiraz International Airport",
+            "CityID": 3,
+            "City": {
+                "Name": "Shiraz"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 146,
+        "Destination": {
+            "Name": "Mashhad International Airport",
+            "CityID": 4,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T12:00:00Z",
+        "ArrivalTime": "2023-06-14T17:00:00Z",
+        "AirplaneID": 3,
+        "Airplane": {
+            "Name": "Laughing Airplane",
+            "AirlineID": 2,
+            "Airline": {
+                "Name": "Mahan Airline",
+                "Logo": "Mahan Airline_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 1,
+        "Price": 49,
+        "RemainingCapacity": 2,
+        "CancelCondition": "There is no cancelation policy :)"
+    },
+    {
+        "ID": 4,
+        "FlightNo": "EA902",
+        "DepartureID": 423,
+        "Departure": {
+            "Name": "Mashhad International Airport",
+            "CityID": 4,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 166,
+        "Destination": {
+            "Name": "Shiraz International Airport",
+            "CityID": 3,
+            "City": {
+                "Name": "Shiraz"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T12:00:00Z",
+        "ArrivalTime": "2023-06-14T17:00:00Z",
+        "AirplaneID": 3,
+        "Airplane": {
+            "Name": "Laughing Airplane",
+            "AirlineID": 2,
+            "Airline": {
+                "Name": "Mahan Airline",
+                "Logo": "Mahan Airline_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 2,
+        "Price": 29,
+        "RemainingCapacity": 8,
+        "CancelCondition": "There is no cancelation policy :)"
+    },
+    {
+        "ID": 5,
+        "FlightNo": "KA728",
+        "DepartureID": 827,
+        "Departure": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Tehran"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 876,
+        "Destination": {
+            "Name": "Shiraz International Airport",
+            "CityID": 3,
+            "City": {
+                "Name": "Shiraz"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 4,
+        "Airplane": {
+            "Name": "Fake Airplane",
+            "AirlineID": 3,
+            "Airline": {
+                "Name": "Aseman Airline",
+                "Logo": "Aseman Airline_logo.png"
+            },
+            "Capacity": 150
+        },
+        "FlightClass": 0,
+        "Price": 99,
+        "RemainingCapacity": 12,
+        "CancelCondition": "You can cancel if you find the button :)"
+    },
+    {
+        "ID": 6,
+        "FlightNo": "LM738",
+        "DepartureID": 727,
+        "Departure": {
+            "Name": "Shiraz International Airport",
+            "CityID": 3,
+            "City": {
+                "Name": "Shiraz"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 897,
+        "Destination": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Tehran"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 5,
+        "Airplane": {
+            "Name": "Fake Airplane2",
+            "AirlineID": 3,
+            "Airline": {
+                "Name": "Aseman Airline",
+                "Logo": "Aseman Airline_logo.png"
+            },
+            "Capacity": 150
+        },
+        "FlightClass": 1,
+        "Price": 69,
+        "RemainingCapacity": 20,
+        "CancelCondition": "You can cancel if you find the button :)"
+    },
+    {
+        "ID": 7,
+        "FlightNo": "LM788",
+        "DepartureID": 727,
+        "Departure": {
+            "Name": "Rome International Airport",
+            "CityID": 6,
+            "City": {
+                "Name": "Rome"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 897,
+        "Destination": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Tehran"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 6,
+        "Airplane": {
+            "Name": "Wrecked Airplane",
+            "AirlineID": 4,
+            "Airline": {
+                "Name": "Qatar Airways",
+                "Logo": "Qatar Airways_logo.png"
+            },
+            "Capacity": 150
+        },
+        "FlightClass": 1,
+        "Price": 199,
+        "RemainingCapacity": 20,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 8,
+        "FlightNo": "IA788",
+        "DepartureID": 982,
+        "Departure": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Tehran"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 597,
+        "Destination": {
+            "Name": "Rome International Airport",
+            "CityID": 6,
+            "City": {
+                "Name": "Rome"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 6,
+        "Airplane": {
+            "Name": "Wrecked Airplane",
+            "AirlineID": 4,
+            "Airline": {
+                "Name": "Qatar Airways",
+                "Logo": "Qatar Airways_logo.png"
+            },
+            "Capacity": 150
+        },
+        "FlightClass": 2,
+        "Price": 199,
+        "RemainingCapacity": 12,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 9,
+        "FlightNo": "LO652",
+        "DepartureID": 726,
+        "Departure": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Tehran"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 872,
+        "Destination": {
+            "Name": "Paris Charles de Gaulle Airport",
+            "CityID": 7,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 7,
+        "Airplane": {
+            "Name": "Sad Airplane",
+            "AirlineID": 5,
+            "Airline": {
+                "Name": "Qatar Airways",
+                "Logo": "Qatar Airways_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 1,
+        "Price": 199,
+        "RemainingCapacity": 12,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 10,
+        "FlightNo": "OM092",
+        "DepartureID": 971,
+        "Departure": {
+            "Name": "Paris Charles de Gaulle Airport",
+            "CityID": 7,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 872,
+        "Destination": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Tehran"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 7,
+        "Airplane": {
+            "Name": "Sad Airplane",
+            "AirlineID": 5,
+            "Airline": {
+                "Name": "Qatar Airways",
+                "Logo": "Qatar Airways_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 0,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 11,
+        "FlightNo": "LN927",
+        "DepartureID": 923,
+        "Departure": {
+            "Name": "Paris Charles de Gaulle Airport",
+            "CityID": 7,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 872,
+        "Destination": {
+            "Name": "Mashhad International Airport",
+            "CityID": 4,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 8,
+        "Airplane": {
+            "Name": "Mad Airplane",
+            "AirlineID": 6,
+            "Airline": {
+                "Name": "Aseman Airline",
+                "Logo": "Aseman Airline_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 0,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 12,
+        "FlightNo": "PO762",
+        "DepartureID": 761,
+        "Departure": {
+            "Name": "Mashhad International Airport",
+            "CityID": 4,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 872,
+        "Destination": {
+            "Name": "Paris Charles de Gaulle Airport",
+            "CityID": 7,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-06-14T15:30:00Z",
+        "ArrivalTime": "2023-06-14T23:45:00Z",
+        "AirplaneID": 8,
+        "Airplane": {
+            "Name": "Mad Airplane",
+            "AirlineID": 6,
+            "Airline": {
+                "Name": "Aseman Airline",
+                "Logo": "Aseman Airline_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 0,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 13,
+        "FlightNo": "KS927",
+        "DepartureID": 643,
+        "Departure": {
+            "Name": "Beijing Daxing International Airport",
+            "CityID": 8,
+            "City": {
+                "Name": "Beijing"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 735,
+        "Destination": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-12-12T15:30:00Z",
+        "ArrivalTime": "2023-12-11T23:45:00Z",
+        "AirplaneID": 3,
+        "Airplane": {
+            "Name": "Happy Airplane",
+            "AirlineID": 1,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 0,
+        "Price": 599,
+        "RemainingCapacity": 12,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 14,
+        "FlightNo": "KS927",
+        "DepartureID": 643,
+        "Departure": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 735,
+        "Destination": {
+            "Name": "Beijing Daxing International Airport",
+            "CityID": 8,
+            "City": {
+                "Name": "Beijing"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-12-13T15:30:00Z",
+        "ArrivalTime": "2023-12-14T23:45:00Z",
+        "AirplaneID": 7,
+        "Airplane": {
+            "Name": "Happy Airplane",
+            "AirlineID": 1,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 1,
+        "Price": 299,
+        "RemainingCapacity": 16,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 15,
+        "FlightNo": "KS927",
+        "DepartureID": 643,
+        "Departure": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DestinationID": 735,
+        "Destination": {
+            "Name": "San Francisco International Airport",
+            "CityID": 2,
+            "City": {
+                "Name": "San Francisco"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-12-13T15:30:00Z",
+        "ArrivalTime": "2023-12-14T23:45:00Z",
+        "AirplaneID": 1,
+        "Airplane": {
+            "Name": "Laughing Airplane",
+            "AirlineID": 2,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 1,
+        "Price": 399,
+        "RemainingCapacity": 16,
+        "CancelCondition": "Nobody can cancel the flight unless we want"
+    },
+    {
+        "ID": 16,
+        "FlightNo": "OC747",
+        "DepartureID": 833,
+        "Departure": {
+            "Name": "San Francisco International Airport",
+            "CityID": 2,
+            "City": {
+                "Name": "San Francisco"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 735,
+        "Destination": {
+            "Name": "MehrAbad International Airport",
+            "CityID": 5,
+            "City": {
+                "Name": "Mashad"
+            },
+            "Terminal": "Terminal 2"
+        },
+        "DepartureTime": "2023-10-14T15:30:00Z",
+        "ArrivalTime": "2023-10-15T23:45:00Z",
+        "AirplaneID": 13,
+        "Airplane": {
+            "Name": "Laughing Airplane",
+            "AirlineID": 2,
+            "Airline": {
+                "Name": "Aseman Airline",
+                "Logo": "Aseman Airline_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 0,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "Are you sure that you want to cancel this amazing flight?"
+    },
+    {
+        "ID": 17,
+        "FlightNo": "KS982",
+        "DepartureID": 912,
+        "Departure": {
+            "Name": "Beijing Daxing International Airport",
+            "CityID": 8,
+            "City": {
+                "Name": "Beijing"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 827,
+        "Destination": {
+            "Name": "John F. Kennedy International Airport",
+            "CityID": 1,
+            "City": {
+                "Name": "New York"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-10-14T15:30:00Z",
+        "ArrivalTime": "2023-10-15T23:45:00Z",
+        "AirplaneID": 12,
+        "Airplane": {
+            "Name": "Sad Airplane",
+            "AirlineID": 5,
+            "Airline": {
+                "Name": "Qatar Airways",
+                "Logo": "Qatar Airways_logo.png"
+            },
+            "Capacity": 200
+        },
+        "FlightClass": 2,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "Did you find out how to cancel the flight? No? :)))"
+    },
+    {
+        "ID": 18,
+        "FlightNo": "LA882",
+        "DepartureID": 112,
+        "Departure": {
+            "Name": "John F. Kennedy International Airport",
+            "CityID": 1,
+            "City": {
+                "Name": "New York"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 827,
+        "Destination": {
+            "Name": "Beijing Daxing International Airport",
+            "CityID": 8,
+            "City": {
+                "Name": "Beijing"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-10-14T15:30:00Z",
+        "ArrivalTime": "2023-10-15T23:45:00Z",
+        "AirplaneID": 6,
+        "Airplane": {
+            "Name": "Sad Airplane",
+            "AirlineID": 5,
+            "Airline": {
+                "Name": "Qatar Airways",
+                "Logo": "Qatar Airways_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 2,
+        "Price": 199,
+        "RemainingCapacity": 8,
+        "CancelCondition": "Did you find out how to cancel the flight? No? :)))"
+    },
+    {
+        "ID": 19,
+        "FlightNo": "LS982",
+        "DepartureID": 901,
+        "Departure": {
+            "Name": "Paris Charles de Gaulle Airport",
+            "CityID": 7,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 872,
+        "Destination": {
+            "Name": "John F. Kennedy International Airport",
+            "CityID": 1,
+            "City": {
+                "Name": "New York"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-10-14T15:30:00Z",
+        "ArrivalTime": "2023-10-15T23:45:00Z",
+        "AirplaneID": 8,
+        "Airplane": {
+            "Name": "Laughing Airplane",
+            "AirlineID": 2,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 1,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "air-condition by-user"
+    },
+    {
+        "ID": 20,
+        "FlightNo": "KI726",
+        "DepartureID": 902,
+        "Departure": {
+            "Name": "John F. Kennedy International Airport",
+            "CityID": 1,
+            "City": {
+                "Name": "New York"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DestinationID": 872,
+        "Destination": {
+            "Name": "Paris Charles de Gaulle Airport",
+            "CityID": 7,
+            "City": {
+                "Name": "Paris"
+            },
+            "Terminal": "Terminal 1"
+        },
+        "DepartureTime": "2023-10-14T15:30:00Z",
+        "ArrivalTime": "2023-10-15T23:45:00Z",
+        "AirplaneID": 10,
+        "Airplane": {
+            "Name": "Laughing Airplane",
+            "AirlineID": 2,
+            "Airline": {
+                "Name": "Singapore Airlines",
+                "Logo": "Singapore Airlines_logo.png"
+            },
+            "Capacity": 100
+        },
+        "FlightClass": 1,
+        "Price": 399,
+        "RemainingCapacity": 8,
+        "CancelCondition": "You can't cancel the flight. that's intended to be that way :D"
+    }
+]
