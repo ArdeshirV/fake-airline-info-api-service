@@ -23,7 +23,7 @@ const (
 	ParamFlightNo = "flightno"
 	TimeLayout = "2006-01-02"
 	// TODO: This string should be replaced with README.md file and it's contents should be raw HTML not markdown
-	RootPage = "<strong>Fake Airline Information Service API</strong><br/><br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/the-go-dragons/fake-airline-info-service\">Check the project in Github</a>"
+	RootPage = "<strong>Fake Airline Information Service API</strong><br/><br/><a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://github.com/the-go-dragons/fake-airline-info-api-service\">Check the project in Github</a>"
 )
 
 func rootRoutes(e *echo.Echo) {
@@ -40,13 +40,27 @@ func rootHandler(ctx echo.Context) error {
 }
 
 func listReserveHandler(ctx echo.Context) error {
-	data, err := service.GetFlights()
+	flights, err := service.GetFlights()
 	if err != nil {
 		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
 	}
-	// The solution of Ticket-4 goes here
+	flightNo := ctx.QueryParam(ParamFlightNo)
+	if flightNo != "" {
+		filteredFlights := make([]models.Flight, 0)
+		for _, flight := range flights {
+			if flight.FlightNo == flightNo {
+				filteredFlights = append(filteredFlights, flight)
+			}
+		}
+		if len(filteredFlights) > 0 {
+			selectedFlight := filteredFlights[0]
+			// The solution of Ticket-4 goes here
+			//
+			return echoJSON(ctx, http.StatusOK, selectedFlight)
+		}
+	}
 
-	return echoJSON(ctx, http.StatusOK, data)
+	return echoJSON(ctx, http.StatusOK, "Nothing")
 }
 
 func listAirplanesHandler(ctx echo.Context) error {
