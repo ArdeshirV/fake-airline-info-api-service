@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"time"
@@ -33,7 +32,7 @@ func GetAirplanes() ([]models.Airplane, error) {
 }
 
 func GetFlights() ([]models.Flight, error) {
-	flightData, err := ioutil.ReadFile("data/flight.json")
+	flightData, err := os.ReadFile("data/flight.json")
 	if err != nil {
 		return nil, errorHandler("Failed to read flight data", err)
 	}

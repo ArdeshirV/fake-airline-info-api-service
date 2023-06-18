@@ -56,6 +56,7 @@ func listFlightsHandler(ctx echo.Context) error {
 		}
 		if len(filteredFlights) > 0 {
 			// The solution of Ticket-4 goes here - flightNo
+			;
 		}
 		return echoJSON(ctx, http.StatusOK, filteredFlights)
 	} else {
