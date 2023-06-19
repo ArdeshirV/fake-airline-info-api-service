@@ -11,15 +11,10 @@ import (
 
 	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	"github.com/the-go-dragons/fake-airline-info-service/config"
+	colors "github.com/the-go-dragons/fake-airline-info-service/config/colors"
 )
 
 type Timestamp time.Time
-
-const (
-	Normal  = "\033[0m"
-	Red     = "\033[0;31m"
-	BoldRed = "\033[1;31m"
-)
 
 const (
 	TimeLayout = "2006-01-02"
@@ -141,7 +136,8 @@ func GetDepartureDates() ([]time.Time, error) {
 func errorHandler(message string, err error) error {
 	errMsgHTML := fmt.Sprintf("%s %v\n", message, err)
 	if config.IsDebugModeEnabled() {
-		errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n", BoldRed, message, Red, err, Normal)
+		errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n",
+		colors.BoldRed, message, colors.Red, err, colors.Normal)
 		log.New(os.Stderr, "\n", 1).Print(errMsgColor)
 	}
 	return errors.New(errMsgHTML)
