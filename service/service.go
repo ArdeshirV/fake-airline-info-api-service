@@ -9,35 +9,103 @@ import (
 	"strings"
 	"time"
 
-	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	"github.com/the-go-dragons/fake-airline-info-service/config"
+	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	colors "github.com/the-go-dragons/fake-airline-info-service/config/colors"
 )
 
-type Timestamp time.Time
-
 const (
 	TimeLayout = "2006-01-02"
+	JSONFile = "data/flight.json"
+	CommandReturn = "return"
+	CommandReserve = "reserve"
 )
 
-// TODO: Incompleted implementation
-func SetRemainingCapacity(flightNo, command string) (string, error) {
-	msg := ""
+type ReserveResponse struct  {
+	Message string        `json:"message"`
+	FlightNo string       `json:"flightno"`
+	Capacity int          `json:"capacity"`
+	RemainingCapacity int `json:"remainingcapacity"`
+}
+
+func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
+	command := string(cmd)
 	flights, err := GetFlights()
 	if err != nil {
-		return msg, errorHandler("Failed to read flight data", err)
+		return "", errorHandler("Failed to read flight data", err)
 	}
-	filteredFlights := make([]models.Flight, 0)
-	for _, flight := range flights {
-		if flight.FlightNo == flightNo {
-			filteredFlights = append(filteredFlights, flight)
+	count := 0
+	index := -1
+	for i, flight := range flights {
+		if Normalize(flight.FlightNo) == Normalize(flightNo) {
+			count++
+			index = i
 		}
 	}
-	if len(filteredFlights) > 0 {
-		selectedFlight := filteredFlights[0]
-		msg = fmt.Sprintf("%v", selectedFlight)
+	if count > 0 {
+		if count > 1 {
+			errMsgFmt := "Duplication detected. More than one Flight found FlightNo:%v"
+			errMsg := fmt.Sprintf(errMsgFmt, flightNo)
+			return "", errorHandler(errMsg, err)
+		}
+		msg := ""
+		dataChanged := false
+		cmd := Normalize(command)
+		switch(cmd) {
+		case CommandReserve:
+			if flights[index].RemainingCapacity > 0 {
+				flights[index].RemainingCapacity--
+				dataChanged = true
+				msg = "Remaning capacity reduced"
+			} else {
+				msg = "All capacity of airplane is available. You can not reduce remaining capacity anymore."
+			}
+		case CommandReturn:
+			if int(flights[index].RemainingCapacity) < int(flights[index].Airplane.Capacity) {
+				flights[index].RemainingCapacity++
+				dataChanged = true
+				msg = "Remaning capacity increased."
+			} else {
+				msg = "There is not any remaning capacity."
+			}
+		default:
+			errMsg := fmt.Sprintf("The \"%v\" command is unkown.", command)
+			return "", errorHandler(errMsg, err)
+		}
+		if dataChanged {
+			err := setFlights(flights)
+			if err != nil {
+				return "", errorHandler("Failed to set flights data", err)
+			}
+			msg += " Remaining capacity updated with new value."
+		}
+		reserveResponse := ReserveResponse {
+			Message: msg,
+			FlightNo: flightNo,
+			Capacity: int(flights[index].Airplane.Capacity),
+			RemainingCapacity: flights[index].RemainingCapacity,
+		}
+		bytes, err := json.Marshal(reserveResponse)
+		if err != nil {
+			return msg, errorHandler("Failed to convert ReserveResponse struct to JSON", err)
+		}
+		return string(bytes), nil
 	}
-	return fmt.Sprintf(`[{"message": "%v"}]`, msg), nil
+	errMsg := "Failed to find specified Flight with FlightNo:%v to reserve/return"
+	return "", errorHandler(fmt.Sprintf(errMsg, flightNo), err)
+}
+
+func setFlights(flights []models.Flight) (error) {
+	bytes, err := json.Marshal(flights)
+	if err != nil {
+		return errorHandler("Failed to convert []models.Flight to JSON", err)
+	}
+	err = os.WriteFile(JSONFile, bytes, 0664)
+	if err != nil {
+		errMsg := fmt.Sprintf("Failed to write []models.Flight as JSON in file \"%s\"", JSONFile)
+		return errorHandler(errMsg, err)
+	}
+	return nil
 }
 
 func GetAirplanes() ([]models.Airplane, error) {
@@ -53,7 +121,7 @@ func GetAirplanes() ([]models.Airplane, error) {
 }
 
 func GetFlights() ([]models.Flight, error) {
-	flightData, err := os.ReadFile("data/flight.json")
+	flightData, err := os.ReadFile(JSONFile)
 	if err != nil {
 		return nil, errorHandler("Failed to read flight data", err)
 	}
@@ -134,19 +202,13 @@ func GetDepartureDates() ([]time.Time, error) {
 }
 
 func errorHandler(message string, err error) error {
-	errMsgHTML := fmt.Sprintf("%s %v\n", message, err)
+	errMsg := fmt.Sprintf("%s %v\n", message, err)
 	if config.IsDebugModeEnabled() {
 		errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n",
 		colors.BoldRed, message, colors.Red, err, colors.Normal)
 		log.New(os.Stderr, "\n", 1).Print(errMsgColor)
 	}
-	return errors.New(errMsgHTML)
-}
-
-func (t *Timestamp) UnmarshalParam(src string) error {
-	ts, err := time.Parse(time.RFC3339, src)
-	*t = Timestamp(ts)
-	return err
+	return errors.New(errMsg)
 }
 
 func Normalize(text string) string {
