@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"net/http"
 	"github.com/labstack/echo/v4"
-	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	"github.com/the-go-dragons/fake-airline-info-service/service"
 	"github.com/the-go-dragons/fake-airline-info-service/config"
 )
@@ -87,6 +86,9 @@ func listReserveFlightHandler(ctx echo.Context) error {
 			return ctx.HTML(http.StatusBadRequest, htmlErrorMsgString(errMsg))
 		} else {
 			msg, err := service.SetRemainingCapacity(flightNo, command)
+			if err != nil {
+				return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+			}
 			return echoJSON(ctx, http.StatusOK, msg)
 		}
 	}
