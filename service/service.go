@@ -26,10 +26,11 @@ const (
 )
 
 // TODO: Incompleted implementation
-func SetRemainingCapacity(flightNo, command) (string, error) {
-	flights, err := service.GetFlights()
+func SetRemainingCapacity(flightNo, command string) (string, error) {
+	msg := ""
+	flights, err := GetFlights()
 	if err != nil {
-		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+		return msg, errorHandler("Failed to read flight data", err)
 	}
 	filteredFlights := make([]models.Flight, 0)
 	for _, flight := range flights {
@@ -39,9 +40,9 @@ func SetRemainingCapacity(flightNo, command) (string, error) {
 	}
 	if len(filteredFlights) > 0 {
 		selectedFlight := filteredFlights[0]
-		return echoJSON(ctx, http.StatusOK, selectedFlight)
+		msg = fmt.Sprintf("%v", selectedFlight)
 	}
-	return "", nil
+	return fmt.Sprintf(`[{"message": "%v"}]`, msg), nil
 }
 
 func GetAirplanes() ([]models.Airplane, error) {
