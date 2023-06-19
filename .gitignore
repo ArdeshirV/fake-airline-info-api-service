@@ -22,3 +22,5 @@ go.work
 
 # Executable file
 main
+fake-airline-info-service
+
