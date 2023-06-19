@@ -13,8 +13,6 @@ const (
 	ParamCityA = "city_a"
 	ParamCityB = "city_b"
 	ParamCommand = "command"
-	CommandReturn = "return"
-	CommandReserve = "reserve"
 	ParamFlightNo = "flightno"
 	RootPage =
 `<html>
