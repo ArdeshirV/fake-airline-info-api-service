@@ -58,7 +58,7 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 				dataChanged = true
 				msg = "Remaning capacity reduced"
 			} else {
-				msg = "All capacity of airplane is available. You can not reduce remaining capacity anymore."
+				msg = "There is not any remaning capacity."
 			}
 		case CommandReturn:
 			if int(flights[index].RemainingCapacity) < int(flights[index].Airplane.Capacity) {
@@ -66,7 +66,7 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 				dataChanged = true
 				msg = "Remaning capacity increased."
 			} else {
-				msg = "There is not any remaning capacity."
+				msg = "All capacity of airplane is available. You can not reduce remaining capacity anymore."
 			}
 		default:
 			errMsg := fmt.Sprintf("The \"%v\" command is unkown.", command)
