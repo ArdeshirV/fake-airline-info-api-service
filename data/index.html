@@ -1,0 +1,36 @@
+<html>
+	<header>
+		<title>Fake Airline Information Service API</title>
+	</header>
+	<body style="color:white; background-color:black;" text-align:left; " >
+		<head>
+			<h1 style="color:yellow; text-align:center;">Fake Airline Information Service API</h1>
+		<head>
+		<section>
+			<pre>
+				<a href="http://localhost:3000" target="_blank"  rel="noopener noreferrer">http://localhost:3000</a>
+				<a href="http://localhost:3000/cities" target="_blank" rel="noopener noreferrer">http://localhost:3000/cities</a>
+				<a href="http://localhost:3000/airplanes" target="_blank" rel="noopener noreferrer">http://localhost:3000/airplanes</a>
+				<a href="http://localhost:3000/departure_dates" target="_blank" rel="noopener noreferrer">http://localhost:3000/departure_dates</a>
+				<a href="http://localhost:3000/flights" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights</a>
+				<a href="http://localhost:3000/flights?flightno=EAX254" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights?flightno=EAX254</a>
+				<a href="http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14</a>
+			</pre>
+			<pre style="color:green;">
+				curl -X GET "http://localhost:3000/cities"
+				curl -X GET "http://localhost:3000/airplanes"
+				curl -X GET "http://localhost:3000/departure_dates"
+				curl -X GET "http://localhost:3000/flights"
+				curl -X GET "http://localhost:3000/flights?flightno=EAX254"
+				curl -X GET "http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14"
+				<br/>
+				curl -X POST "http://localhost:3000/reserve_flight?flightno=EAX254&command=return"
+				curl -X POST "http://localhost:3000/reserve_flight?flightno=EAX254&command=reserve"
+			</pre>
+		</section>
+		<footer style="text-align:center;">
+			<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/the-go-dragons/fake-airline-info-api-service">Visit the Project in Github</a></p>
+			<p style="text-align: center; width: 100%; ">Copyright&copy; 2023 <a href="https://github.com/the-go-dragons">The Go Dragons Team</a>, Licensed under MIT</p>
+		</footer>
+	<body>
+</html>

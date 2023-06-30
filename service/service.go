@@ -12,6 +12,7 @@ import (
 	"github.com/the-go-dragons/fake-airline-info-service/config"
 	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	colors "github.com/the-go-dragons/fake-airline-info-service/config/colors"
+	"github.com/the-go-dragons/fake-airline-info-service/config/logos"
 )
 
 const (
@@ -93,6 +94,14 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 	}
 	errMsg := "Failed to find specified Flight with FlightNo:%v to reserve/return"
 	return "", errorHandler(fmt.Sprintf(errMsg, flightNo), err)
+}
+
+func GetAirplaneLogoFileName(name string) (string, error) {
+	airlineLogo, err := logos.GetAirlineLogoByName(logos.AirlineName(name))
+	if err != nil {
+		return "", err
+	}
+	return string(airlineLogo), nil
 }
 
 func setFlights(flights []models.Flight) (error) {
@@ -203,7 +212,7 @@ func GetDepartureDates() ([]time.Time, error) {
 
 func errorHandler(message string, err error) error {
 	errMsg := fmt.Sprintf("%s %v\n", message, err)
-	if config.IsDebugModeEnabled() {
+	if config.IsDebugMode() {
 		errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n",
 		colors.BoldRed, message, colors.Red, err, colors.Normal)
 		log.New(os.Stderr, "\n", 1).Print(errMsgColor)
