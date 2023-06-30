@@ -1,4 +1,4 @@
-package service
+package colors
 
 type color string
 

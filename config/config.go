@@ -18,7 +18,7 @@ const (
 	ReservedParameter
 )
 
-func IsDebugModeEnabled() bool {
+func IsDebugMode() bool {
 	return debugMode
 }
 
