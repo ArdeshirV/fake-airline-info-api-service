@@ -5,7 +5,6 @@ import (
 	"net/http"
 	"github.com/labstack/echo/v4"
 	"github.com/the-go-dragons/fake-airline-info-service/service"
-	"github.com/the-go-dragons/fake-airline-info-service/config"
 )
 
 const (
@@ -14,47 +13,13 @@ const (
 	ParamCityB = "city_b"
 	ParamCommand = "command"
 	ParamFlightNo = "flightno"
-	RootPage =
-`<html>
-	<header>
-		<title>Fake Airline Information Service API</title>
-	</header>
-	<body style="color:white; background-color:black;" text-align:left; " >
-		<head>
-			<h1 style="color:yellow; text-align:center;">Fake Airline Information Service API</h1>
-		<head>
-		<section>
-			<pre>
-				<a href="http://localhost:3000" target="_blank"  rel="noopener noreferrer">http://localhost:3000</a>
-				<a href="http://localhost:3000/cities" target="_blank" rel="noopener noreferrer">http://localhost:3000/cities</a>
-				<a href="http://localhost:3000/airplanes" target="_blank" rel="noopener noreferrer">http://localhost:3000/airplanes</a>
-				<a href="http://localhost:3000/departure_dates" target="_blank" rel="noopener noreferrer">http://localhost:3000/departure_dates</a>
-				<a href="http://localhost:3000/flights" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights</a>
-				<a href="http://localhost:3000/flights?flightno=EAX254" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights?flightno=EAX254</a>
-				<a href="http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14" target="_blank" rel="noopener noreferrer">http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14</a>
-			</pre>
-			<pre style="color:green;">
-				curl -X GET "http://localhost:3000/cities"
-				curl -X GET "http://localhost:3000/airplanes"
-				curl -X GET "http://localhost:3000/departure_dates"
-				curl -X GET "http://localhost:3000/flights"
-				curl -X GET "http://localhost:3000/flights?flightno=EAX254"
-				curl -X GET "http://localhost:3000/flights?city_a=New%20York&city_b=Paris&time=2023-06-14"
-				<br/>
-				curl -X POST "http://localhost:3000/reserve_flight?flightno=EAX254&command=return"
-				curl -X POST "http://localhost:3000/reserve_flight?flightno=EAX254&command=reserve"
-			</pre>
-		</section>
-		<footer style="text-align:center;">
-			<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/the-go-dragons/fake-airline-info-api-service">Visit the Project in Github</a></p>
-			<p style="text-align: center; width: 100%; ">Copyright&copy; 2023 <a href="https://github.com/the-go-dragons">The Go Dragons Team</a>, Licensed under MIT</p>
-		</footer>
-	<body>
-</html>`
+	ParamLogoName = "logo_name"
+	IndexFileName = "data/index.html"
 )
 
 func rootRoutes(e *echo.Echo) {
 	e.GET("/", rootHandler)
+	e.GET("/airline", findAirlineLogoHandler)
 	e.GET("/flights", listFlightsHandler)
 	e.GET("/airplanes", listAirplanesHandler)
 	e.GET("/cities", listCitiesHandler)
@@ -63,7 +28,20 @@ func rootRoutes(e *echo.Echo) {
 }
 
 func rootHandler(ctx echo.Context) error {
-	return ctx.HTML(http.StatusOK, RootPage)
+	return ctx.File(IndexFileName)
+}
+
+func findAirlineLogoHandler(ctx echo.Context) error {
+	airlineLogoName := ctx.QueryParam(ParamLogoName)
+	if airlineLogoName == "" {
+		err := fmt.Errorf("the '%v' parameter is required", ParamLogoName)
+		return echoErrorAsJSON(ctx, http.StatusBadRequest, err)
+	}
+	fileName, err := service.GetAirplaneLogoFileName(airlineLogoName)
+	if err != nil {
+		return echoErrorAsJSON(ctx, http.StatusBadRequest, err)
+	}
+	return ctx.File(fileName)
 }
 
 func listReserveFlightHandler(ctx echo.Context) error {
@@ -81,22 +59,22 @@ func listReserveFlightHandler(ctx echo.Context) error {
 			errMsg += "\"flightno\" parameter is not defined correctly. "
 		}
 		if dataIsNotEnough {
-			return ctx.HTML(http.StatusBadRequest, htmlErrorMsgString(errMsg))
+			return echoStringAsJSON(ctx, http.StatusBadRequest, errMsg)
 		} else {
 			msg, err := service.SetRemainingCapacity(flightNo, command)
 			if err != nil {
-				return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+				return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 			}
 			return echoJSON(ctx, http.StatusOK, msg)
 		}
 	}
-	return ctx.HTML(http.StatusBadRequest, htmlErrorMsgString("Bad request!"))
+	return echoStringAsJSON(ctx, http.StatusBadRequest, "bad request!")
 }
 
 func listAirplanesHandler(ctx echo.Context) error {
 	data, err := service.GetAirplanes()
 	if err != nil {
-		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+		return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 	}
 	return echoJSON(ctx, http.StatusOK, data)
 }
@@ -106,7 +84,7 @@ func listFlightsHandler(ctx echo.Context) error {
 	if flightNo != "" {
 		fliteredFlight, err := service.GetFlightsByFlightNo(flightNo)
 		if err != nil {
-			return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+			return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 		}
 		return echoJSON(ctx, http.StatusOK, fliteredFlight)
 	} else {
@@ -129,29 +107,29 @@ func listFlightsHandler(ctx echo.Context) error {
 				errMsg += "\"city_b\" is not defined correctly. "
 			}
 			if dataIsNotEnough {
-				return ctx.HTML(http.StatusBadRequest, htmlErrorMsgString(errMsg))
+				return echoStringAsJSON(ctx, http.StatusBadRequest, errMsg)
 			} else {
 				filteredFlights, err := service.GetFlightsFromA2B(timeD, cityA, cityB)
 				if err != nil {
-					return ctx.HTML(http.StatusBadRequest, htmlErrorMsg(err))
+					return echoErrorAsJSON(ctx, http.StatusBadRequest, err)
 				}
 				return echoJSON(ctx, http.StatusOK, filteredFlights)
 			}
 		} else {
 			data, err := service.GetFlights()
 			if err != nil {
-				return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+				return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 			}
 			return echoJSON(ctx, http.StatusOK, data)
 		}
 	}
-	return ctx.HTML(http.StatusBadRequest, htmlErrorMsgString("Bad request!"))
+	return echoStringAsJSON(ctx, http.StatusBadRequest, "bad request!")
 }
 
 func listCitiesHandler(ctx echo.Context) error {
 	data, err := service.GetCities()
 	if err != nil {
-		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+		return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 	}
 	return echoJSON(ctx, http.StatusOK, data)
 }
@@ -159,23 +137,7 @@ func listCitiesHandler(ctx echo.Context) error {
 func listDepartureDatesHandler(ctx echo.Context) error {
 	data, err := service.GetDepartureDates()
 	if err != nil {
-		return ctx.HTML(http.StatusInternalServerError, htmlErrorMsg(err))
+		return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 	}
 	return echoJSON(ctx, http.StatusOK, data)
-}
-
-func htmlErrorMsg(err error) string {
-	return fmt.Sprintf("<strong style=\"color:red\">Error: %v</strong>", err)
-}
-
-func htmlErrorMsgString(errMsg string) string {
-	return fmt.Sprintf("<strong style=\"color:red\">Error: %v</strong>", errMsg)
-}
-
-func echoJSON(ctx echo.Context, status int, data interface{}) error {
-	if config.IsDebugModeEnabled() {
-		return ctx.JSONPretty(status, data, "    ")
-	} else {
-		return ctx.JSON(status, data)
-	}
 }
