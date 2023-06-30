@@ -22,5 +22,7 @@ go.work
 
 # Executable file
 main
+main.exe
 fake-airline-info-service
+fake-airline-info-service.exe
 
