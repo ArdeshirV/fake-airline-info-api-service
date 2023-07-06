@@ -5,16 +5,16 @@
         "UpdatedAt": "0001-01-01T00:00:00Z",
         "DeletedAt": null,
         "flightno": "EAX123",
-        "departureid": 112,
+        "departureid": 1,
         "departure": {
-            "ID": 0,
+            "ID": 1,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "John F. Kennedy International Airport",
             "cityid": 1,
             "city": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -24,14 +24,14 @@
         },
         "destinationid": 224,
         "destination": {
-            "ID": 0,
+            "ID": 224,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "San Francisco International Airport",
             "cityid": 2,
             "city": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -43,23 +43,23 @@
         "arrivaltime": "2023-06-14T17:00:00Z",
         "airplaneid": 1,
         "airplane": {
-            "ID": 0,
+            "ID": 1,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Happy Airplane",
             "airlineid": 1,
             "airline": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "American Airline",
+                "logo": "american_airlines"
             },
             "capacity": 200
         },
-        "flightclass": 0,
+        "flightclass": "First Class",
         "price": 599,
         "remainingcapacity": 12,
         "cancelcondition": "There is no cancelation policy :)"
@@ -72,14 +72,14 @@
         "flightno": "EAX254",
         "departureid": 718,
         "departure": {
-            "ID": 0,
+            "ID": 718,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "San Francisco International Airport",
-            "cityid": 2,
+            "cityid": 3,
             "city": {
-                "ID": 0,
+                "ID": 3,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -89,14 +89,14 @@
         },
         "destinationid": 198,
         "destination": {
-            "ID": 0,
+            "ID": 198,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "John F. Kennedy International Airport",
             "cityid": 1,
             "city": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -108,23 +108,23 @@
         "arrivaltime": "2023-06-14T12:00:00Z",
         "airplaneid": 2,
         "airplane": {
-            "ID": 0,
+            "ID": 2,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Happy Airplane",
             "airlineid": 1,
             "airline": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "American Airline",
+                "logo": "american_airlines"
             },
             "capacity": 200
         },
-        "flightclass": 2,
+        "flightclass": "First Class",
         "price": 199,
         "remainingcapacity": 0,
         "cancelcondition": "There is no cancelation policy :)"
@@ -137,14 +137,14 @@
         "flightno": "EB982",
         "departureid": 423,
         "departure": {
-            "ID": 0,
+            "ID": 423,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Shiraz International Airport",
-            "cityid": 3,
+            "cityid": 4,
             "city": {
-                "ID": 0,
+                "ID": 4,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -154,14 +154,14 @@
         },
         "destinationid": 146,
         "destination": {
-            "ID": 0,
+            "ID": 146,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Mashhad International Airport",
-            "cityid": 4,
+            "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -173,23 +173,23 @@
         "arrivaltime": "2023-06-14T17:00:00Z",
         "airplaneid": 3,
         "airplane": {
-            "ID": 0,
+            "ID": 3,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Laughing Airplane",
             "airlineid": 2,
             "airline": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Mahan Airline",
-                "logo": "Mahan Airline_logo.png"
+                "name": "Delta Airline",
+                "logo": "delta_air_lines"
             },
             "capacity": 100
         },
-        "flightclass": 1,
+        "flightclass": "First Class",
         "price": 49,
         "remainingcapacity": 2,
         "cancelcondition": "There is no cancelation policy :)"
@@ -202,14 +202,14 @@
         "flightno": "EA902",
         "departureid": 423,
         "departure": {
-            "ID": 0,
+            "ID": 423,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Mashhad International Airport",
-            "cityid": 4,
+            "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -219,14 +219,14 @@
         },
         "destinationid": 166,
         "destination": {
-            "ID": 0,
+            "ID": 166,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Shiraz International Airport",
-            "cityid": 3,
+            "cityid": 4,
             "city": {
-                "ID": 0,
+                "ID": 4,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -238,23 +238,23 @@
         "arrivaltime": "2023-06-14T17:00:00Z",
         "airplaneid": 3,
         "airplane": {
-            "ID": 0,
+            "ID": 3,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Laughing Airplane",
             "airlineid": 2,
             "airline": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Mahan Airline",
-                "logo": "Mahan Airline_logo.png"
+                "name": "Delta Airline",
+                "logo": "delta_air_lines"
             },
             "capacity": 100
         },
-        "flightclass": 2,
+        "flightclass": "First Class",
         "price": 29,
         "remainingcapacity": 8,
         "cancelcondition": "There is no cancelation policy :)"
@@ -267,14 +267,14 @@
         "flightno": "KA728",
         "departureid": 827,
         "departure": {
-            "ID": 0,
+            "ID": 827,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
-            "cityid": 5,
+            "cityid": 6,
             "city": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -284,14 +284,14 @@
         },
         "destinationid": 876,
         "destination": {
-            "ID": 0,
+            "ID": 876,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Shiraz International Airport",
-            "cityid": 3,
+            "cityid": 4,
             "city": {
-                "ID": 0,
+                "ID": 4,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -303,23 +303,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 4,
         "airplane": {
-            "ID": 0,
+            "ID": 4,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Fake Airplane",
             "airlineid": 3,
             "airline": {
-                "ID": 0,
+                "ID": 3,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Aseman Airline",
-                "logo": "Aseman Airline_logo.png"
+                "name": "United Airline",
+                "logo": "united_airlines"
             },
             "capacity": 150
         },
-        "flightclass": 0,
+        "flightclass": "First Class",
         "price": 99,
         "remainingcapacity": 12,
         "cancelcondition": "You can cancel if you find the button :)"
@@ -332,14 +332,14 @@
         "flightno": "LM738",
         "departureid": 727,
         "departure": {
-            "ID": 0,
+            "ID": 727,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Shiraz International Airport",
-            "cityid": 3,
+            "cityid": 4,
             "city": {
-                "ID": 0,
+                "ID": 4,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -349,14 +349,14 @@
         },
         "destinationid": 897,
         "destination": {
-            "ID": 0,
+            "ID": 897,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
-            "cityid": 5,
+            "cityid": 6,
             "city": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -368,23 +368,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 5,
         "airplane": {
-            "ID": 0,
+            "ID": 5,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Fake Airplane2",
             "airlineid": 3,
             "airline": {
-                "ID": 0,
+                "ID": 3,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Aseman Airline",
-                "logo": "Aseman Airline_logo.png"
+                "name": "United Airline",
+                "logo": "united_airlines"
             },
             "capacity": 150
         },
-        "flightclass": 1,
+        "flightclass": "First Class",
         "price": 69,
         "remainingcapacity": 20,
         "cancelcondition": "You can cancel if you find the button :)"
@@ -397,14 +397,14 @@
         "flightno": "LM788",
         "departureid": 727,
         "departure": {
-            "ID": 0,
+            "ID": 727,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Rome International Airport",
-            "cityid": 6,
+            "cityid": 7,
             "city": {
-                "ID": 0,
+                "ID": 7,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -414,14 +414,14 @@
         },
         "destinationid": 897,
         "destination": {
-            "ID": 0,
+            "ID": 897,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
-            "cityid": 5,
+            "cityid": 6,
             "city": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -433,23 +433,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 6,
         "airplane": {
-            "ID": 0,
+            "ID": 6,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Wrecked Airplane",
             "airlineid": 4,
             "airline": {
-                "ID": 0,
+                "ID": 4,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Qatar Airways",
-                "logo": "Qatar Airways_logo.png"
+                "name": "Lufthansa",
+                "logo": "lufthansa"
             },
             "capacity": 150
         },
-        "flightclass": 1,
+        "flightclass": "First Class",
         "price": 199,
         "remainingcapacity": 20,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -462,14 +462,14 @@
         "flightno": "IA788",
         "departureid": 982,
         "departure": {
-            "ID": 0,
+            "ID": 982,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
-            "cityid": 5,
+            "cityid": 6,
             "city": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -479,14 +479,14 @@
         },
         "destinationid": 597,
         "destination": {
-            "ID": 0,
+            "ID": 597,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Rome International Airport",
-            "cityid": 6,
+            "cityid": 7,
             "city": {
-                "ID": 0,
+                "ID": 7,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -498,23 +498,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 6,
         "airplane": {
-            "ID": 0,
+            "ID": 6,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Wrecked Airplane",
             "airlineid": 4,
             "airline": {
-                "ID": 0,
+                "ID": 4,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Qatar Airways",
-                "logo": "Qatar Airways_logo.png"
+                "name": "Lufthansa",
+                "logo": "lufthansa"
             },
             "capacity": 150
         },
-        "flightclass": 2,
+        "flightclass": "Business Class",
         "price": 199,
         "remainingcapacity": 12,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -527,14 +527,14 @@
         "flightno": "LO652",
         "departureid": 726,
         "departure": {
-            "ID": 0,
+            "ID": 726,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
-            "cityid": 5,
+            "cityid": 6,
             "city": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -544,14 +544,14 @@
         },
         "destinationid": 872,
         "destination": {
-            "ID": 0,
+            "ID": 872,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Paris Charles de Gaulle Airport",
-            "cityid": 7,
+            "cityid": 2,
             "city": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -563,23 +563,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 7,
         "airplane": {
-            "ID": 0,
+            "ID": 7,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Sad Airplane",
             "airlineid": 5,
             "airline": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Qatar Airways",
-                "logo": "Qatar Airways_logo.png"
+                "name": "Emirate",
+                "logo": "emirates"
             },
             "capacity": 200
         },
-        "flightclass": 1,
+        "flightclass": "Business Class",
         "price": 199,
         "remainingcapacity": 12,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -592,14 +592,14 @@
         "flightno": "OM092",
         "departureid": 971,
         "departure": {
-            "ID": 0,
+            "ID": 971,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Paris Charles de Gaulle Airport",
-            "cityid": 7,
+            "cityid": 2,
             "city": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -609,14 +609,14 @@
         },
         "destinationid": 872,
         "destination": {
-            "ID": 0,
+            "ID": 872,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
-            "cityid": 5,
+            "cityid": 6,
             "city": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -628,23 +628,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 7,
         "airplane": {
-            "ID": 0,
+            "ID": 7,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Sad Airplane",
             "airlineid": 5,
             "airline": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Qatar Airways",
-                "logo": "Qatar Airways_logo.png"
+                "name": "Emirate",
+                "logo": "emirates"
             },
             "capacity": 100
         },
-        "flightclass": 0,
+        "flightclass": "Business Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -657,14 +657,14 @@
         "flightno": "LN927",
         "departureid": 923,
         "departure": {
-            "ID": 0,
+            "ID": 923,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Paris Charles de Gaulle Airport",
-            "cityid": 7,
+            "cityid": 2,
             "city": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -674,14 +674,14 @@
         },
         "destinationid": 872,
         "destination": {
-            "ID": 0,
+            "ID": 872,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Mashhad International Airport",
-            "cityid": 4,
+            "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -693,23 +693,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 8,
         "airplane": {
-            "ID": 0,
+            "ID": 8,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Mad Airplane",
             "airlineid": 6,
             "airline": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Aseman Airline",
-                "logo": "Aseman Airline_logo.png"
+                "name": "British Airways",
+                "logo": "british_airways"
             },
             "capacity": 100
         },
-        "flightclass": 0,
+        "flightclass": "Business Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -722,14 +722,14 @@
         "flightno": "PO762",
         "departureid": 761,
         "departure": {
-            "ID": 0,
+            "ID": 761,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Mashhad International Airport",
-            "cityid": 4,
+            "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -739,14 +739,14 @@
         },
         "destinationid": 872,
         "destination": {
-            "ID": 0,
+            "ID": 872,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Paris Charles de Gaulle Airport",
-            "cityid": 7,
+            "cityid": 2,
             "city": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -758,23 +758,23 @@
         "arrivaltime": "2023-06-14T23:45:00Z",
         "airplaneid": 8,
         "airplane": {
-            "ID": 0,
+            "ID": 8,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Mad Airplane",
             "airlineid": 6,
             "airline": {
-                "ID": 0,
+                "ID": 6,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Aseman Airline",
-                "logo": "Aseman Airline_logo.png"
+                "name": "British Airways",
+                "logo": "british_airways"
             },
             "capacity": 100
         },
-        "flightclass": 0,
+        "flightclass": "Business Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -787,14 +787,14 @@
         "flightno": "VN931",
         "departureid": 643,
         "departure": {
-            "ID": 0,
+            "ID": 643,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Beijing Daxing International Airport",
             "cityid": 8,
             "city": {
-                "ID": 0,
+                "ID": 8,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -804,14 +804,14 @@
         },
         "destinationid": 735,
         "destination": {
-            "ID": 0,
+            "ID": 735,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
             "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -823,23 +823,23 @@
         "arrivaltime": "2023-12-11T23:45:00Z",
         "airplaneid": 3,
         "airplane": {
-            "ID": 0,
+            "ID": 3,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Happy Airplane",
-            "airlineid": 1,
+            "airlineid": 7,
             "airline": {
-                "ID": 0,
+                "ID": 7,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "Air France",
+                "logo": "air_france"
             },
             "capacity": 200
         },
-        "flightclass": 0,
+        "flightclass": "Business Class",
         "price": 599,
         "remainingcapacity": 12,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -852,14 +852,14 @@
         "flightno": "JI951",
         "departureid": 643,
         "departure": {
-            "ID": 0,
+            "ID": 643,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
             "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -869,14 +869,14 @@
         },
         "destinationid": 735,
         "destination": {
-            "ID": 0,
+            "ID": 735,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Beijing Daxing International Airport",
             "cityid": 8,
             "city": {
-                "ID": 0,
+                "ID": 8,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -888,23 +888,23 @@
         "arrivaltime": "2023-12-14T23:45:00Z",
         "airplaneid": 7,
         "airplane": {
-            "ID": 0,
+            "ID": 7,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Happy Airplane",
-            "airlineid": 1,
+            "airlineid": 7,
             "airline": {
-                "ID": 0,
+                "ID": 7,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "Air France",
+                "logo": "air_france"
             },
             "capacity": 200
         },
-        "flightclass": 1,
+        "flightclass": "Business Class",
         "price": 299,
         "remainingcapacity": 16,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -917,14 +917,14 @@
         "flightno": "KZ987",
         "departureid": 643,
         "departure": {
-            "ID": 0,
+            "ID": 643,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
             "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -934,14 +934,14 @@
         },
         "destinationid": 735,
         "destination": {
-            "ID": 0,
+            "ID": 735,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "San Francisco International Airport",
-            "cityid": 2,
+            "cityid": 3,
             "city": {
-                "ID": 0,
+                "ID": 3,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -953,23 +953,23 @@
         "arrivaltime": "2023-12-14T23:45:00Z",
         "airplaneid": 1,
         "airplane": {
-            "ID": 0,
+            "ID": 1,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Laughing Airplane",
-            "airlineid": 2,
+            "airlineid": 8,
             "airline": {
-                "ID": 0,
+                "ID": 8,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "Cathay Pacific Airways",
+                "logo": "cathay_pacific_airways"
             },
             "capacity": 200
         },
-        "flightclass": 1,
+        "flightclass": "Business Class",
         "price": 399,
         "remainingcapacity": 16,
         "cancelcondition": "Nobody can cancel the flight unless we want"
@@ -980,33 +980,16 @@
         "UpdatedAt": "0001-01-01T00:00:00Z",
         "DeletedAt": null,
         "flightno": "OC747",
-        "departureid": 833,
+        "departureid": 643,
         "departure": {
-            "ID": 0,
-            "CreatedAt": "0001-01-01T00:00:00Z",
-            "UpdatedAt": "0001-01-01T00:00:00Z",
-            "DeletedAt": null,
-            "name": "San Francisco International Airport",
-            "cityid": 2,
-            "city": {
-                "ID": 0,
-                "CreatedAt": "0001-01-01T00:00:00Z",
-                "UpdatedAt": "0001-01-01T00:00:00Z",
-                "DeletedAt": null,
-                "name": "San Francisco"
-            },
-            "terminal": "Terminal 1"
-        },
-        "destinationid": 735,
-        "destination": {
-            "ID": 0,
+            "ID": 643,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "MehrAbad International Airport",
             "cityid": 5,
             "city": {
-                "ID": 0,
+                "ID": 5,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1014,27 +997,44 @@
             },
             "terminal": "Terminal 2"
         },
-        "departuretime": "2023-10-14T15:30:00Z",
-        "arrivaltime": "2023-10-15T23:45:00Z",
+        "destinationid": 735,
+        "destination": {
+            "ID": 735,
+            "CreatedAt": "0001-01-01T00:00:00Z",
+            "UpdatedAt": "0001-01-01T00:00:00Z",
+            "DeletedAt": null,
+            "name": "San Francisco International Airport",
+            "cityid": 3,
+            "city": {
+                "ID": 3,
+                "CreatedAt": "0001-01-01T00:00:00Z",
+                "UpdatedAt": "0001-01-01T00:00:00Z",
+                "DeletedAt": null,
+                "name": "San Francisco"
+            },
+            "terminal": "Terminal 1"
+        },
+        "departuretime": "2023-12-13T15:30:00Z",
+        "arrivaltime": "2023-12-14T23:45:00Z",
         "airplaneid": 13,
         "airplane": {
-            "ID": 0,
+            "ID": 13,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Laughing Airplane",
-            "airlineid": 2,
+            "airlineid": 9,
             "airline": {
-                "ID": 0,
+                "ID": 9,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Aseman Airline",
-                "logo": "Aseman Airline_logo.png"
+                "name": "Cathay Pacific Airways",
+                "logo": "cathay_pacific_airways"
             },
             "capacity": 200
         },
-        "flightclass": 0,
+        "flightclass": "Business Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "Are you sure that you want to cancel this amazing flight?"
@@ -1047,14 +1047,14 @@
         "flightno": "KS982",
         "departureid": 912,
         "departure": {
-            "ID": 0,
+            "ID": 912,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Beijing Daxing International Airport",
             "cityid": 8,
             "city": {
-                "ID": 0,
+                "ID": 8,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1064,14 +1064,14 @@
         },
         "destinationid": 827,
         "destination": {
-            "ID": 0,
+            "ID": 827,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "John F. Kennedy International Airport",
             "cityid": 1,
             "city": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1083,23 +1083,23 @@
         "arrivaltime": "2023-10-15T23:45:00Z",
         "airplaneid": 12,
         "airplane": {
-            "ID": 0,
+            "ID": 12,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Sad Airplane",
-            "airlineid": 5,
+            "airlineid": 10,
             "airline": {
-                "ID": 0,
+                "ID": 10,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Qatar Airways",
-                "logo": "Qatar Airways_logo.png"
+                "name": "Qantas Airways",
+                "logo": "qantas_airways"
             },
             "capacity": 200
         },
-        "flightclass": 2,
+        "flightclass": "Economic Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "Did you find out how to cancel the flight? No? :)))"
@@ -1112,14 +1112,14 @@
         "flightno": "LA882",
         "departureid": 112,
         "departure": {
-            "ID": 0,
+            "ID": 112,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "John F. Kennedy International Airport",
             "cityid": 1,
             "city": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1129,14 +1129,14 @@
         },
         "destinationid": 827,
         "destination": {
-            "ID": 0,
+            "ID": 827,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Beijing Daxing International Airport",
             "cityid": 8,
             "city": {
-                "ID": 0,
+                "ID": 8,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1148,23 +1148,23 @@
         "arrivaltime": "2023-10-15T23:45:00Z",
         "airplaneid": 6,
         "airplane": {
-            "ID": 0,
+            "ID": 6,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Sad Airplane",
-            "airlineid": 5,
+            "airlineid": 11,
             "airline": {
-                "ID": 0,
+                "ID": 11,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Qatar Airways",
-                "logo": "Qatar Airways_logo.png"
+                "name": "Qantas Airways",
+                "logo": "qantas_airways"
             },
             "capacity": 100
         },
-        "flightclass": 2,
+        "flightclass": "Economic Class",
         "price": 199,
         "remainingcapacity": 8,
         "cancelcondition": "Did you find out how to cancel the flight? No? :)))"
@@ -1177,14 +1177,14 @@
         "flightno": "LS982",
         "departureid": 901,
         "departure": {
-            "ID": 0,
+            "ID": 901,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Paris Charles de Gaulle Airport",
-            "cityid": 7,
+            "cityid": 2,
             "city": {
-                "ID": 0,
+                "ID": 2,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1194,14 +1194,14 @@
         },
         "destinationid": 872,
         "destination": {
-            "ID": 0,
+            "ID": 872,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "John F. Kennedy International Airport",
             "cityid": 1,
             "city": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1213,23 +1213,23 @@
         "arrivaltime": "2023-10-15T23:45:00Z",
         "airplaneid": 8,
         "airplane": {
-            "ID": 0,
+            "ID": 8,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Laughing Airplane",
-            "airlineid": 2,
+            "airlineid": 12,
             "airline": {
-                "ID": 0,
+                "ID": 12,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "Singapore Airline",
+                "logo": "singapore_airlines"
             },
             "capacity": 100
         },
-        "flightclass": 1,
+        "flightclass": "Economic Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "air-condition by-user"
@@ -1242,14 +1242,14 @@
         "flightno": "KI726",
         "departureid": 902,
         "departure": {
-            "ID": 0,
+            "ID": 902,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "John F. Kennedy International Airport",
             "cityid": 1,
             "city": {
-                "ID": 0,
+                "ID": 1,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
@@ -1259,18 +1259,18 @@
         },
         "destinationid": 872,
         "destination": {
-            "ID": 0,
+            "ID": 872,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
-            "name": "Paris Charles de Gaulle Airport",
-            "cityid": 7,
+            "name": "Bandar Abbas Airport",
+            "cityid": 9,
             "city": {
-                "ID": 0,
+                "ID": 9,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Paris"
+                "name": "Bandar Abbas"
             },
             "terminal": "Terminal 1"
         },
@@ -1278,23 +1278,23 @@
         "arrivaltime": "2023-10-15T23:45:00Z",
         "airplaneid": 10,
         "airplane": {
-            "ID": 0,
+            "ID": 10,
             "CreatedAt": "0001-01-01T00:00:00Z",
             "UpdatedAt": "0001-01-01T00:00:00Z",
             "DeletedAt": null,
             "name": "Laughing Airplane",
-            "airlineid": 2,
+            "airlineid": 12,
             "airline": {
-                "ID": 0,
+                "ID": 12,
                 "CreatedAt": "0001-01-01T00:00:00Z",
                 "UpdatedAt": "0001-01-01T00:00:00Z",
                 "DeletedAt": null,
-                "name": "Singapore Airlines",
-                "logo": "Singapore Airlines_logo.png"
+                "name": "Singapore Airline",
+                "logo": "singapore_airlines"
             },
             "capacity": 100
         },
-        "flightclass": 1,
+        "flightclass": "Economic Class",
         "price": 399,
         "remainingcapacity": 8,
         "cancelcondition": "You can't cancel the flight. that's intended to be that way :D"
