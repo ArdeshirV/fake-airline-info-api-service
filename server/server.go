@@ -3,6 +3,7 @@ package server
 import (
 	"fmt"
 	"log"
+
 	"github.com/labstack/echo/v4"
 	colors "github.com/the-go-dragons/fake-airline-info-service/config/colors"
 )
