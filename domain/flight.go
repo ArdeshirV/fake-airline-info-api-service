@@ -6,6 +6,14 @@ import (
 	"gorm.io/gorm"
 )
 
+type FlightClass string
+
+const (
+	FirstClass    FlightClass = "First Class"
+	BusinessClass FlightClass = "Business Class"
+	EconomyClass  FlightClass = "Economic Class"
+)
+
 type Flight struct {
 	gorm.Model
 	FlightNo          string      `json:"flightno"`
@@ -18,9 +26,7 @@ type Flight struct {
 	AirplaneID        uint        `json:"airplaneid"`
 	Airplane          Airplane    `json:"airplane"`
 	FlightClass       FlightClass `json:"flightclass"`
-	Price             int         `json:"price"`
+	Price             int64       `json:"price"`
 	RemainingCapacity int         `json:"remainingcapacity"`
 	CancelCondition   string      `json:"cancelcondition"`
-	// AirlineID       uint
-	// Airline         Airline  --> Already exists in Airplane
 }
