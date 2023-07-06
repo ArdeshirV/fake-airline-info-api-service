@@ -2,9 +2,9 @@ package config
 
 import (
 	"bufio"
+	"fmt"
 	"log"
 	"os"
-	"fmt"
 	"strings"
 	"sync"
 )
@@ -37,13 +37,13 @@ func Get(id configID) string {
 
 // Config Private Implementation ---------------------------------------------------------
 const (
-	hostPortName = "PORT_FAKE"
-	debugModeName = "DEBUG_MODE"
+	hostPortName          = "PORT_FAKE"
+	debugModeName         = "DEBUG_MODE"
 	reservedParameterName = "RESERVED_PARAMETER"
 )
 
 var (
-	debugMode bool
+	debugMode  bool
 	configOnce sync.Once
 	configMap  map[configID]string
 )

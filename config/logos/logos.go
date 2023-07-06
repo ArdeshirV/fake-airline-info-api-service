@@ -5,7 +5,6 @@ import (
 	"strings"
 )
 
-
 // Public Interface ----------------------------------------------------------------------
 
 type AirlineID int
@@ -26,16 +25,16 @@ const (
 )
 
 const (
-	AmericanAirlineName AirlineName = "american_airlines"
-	DeltaAirLineName AirlineName = "delta_air_lines"
-	UnitedAirlineName AirlineName = "united_airlines"
-	LufthansaName AirlineName = "lufthansa"
-	EmirateName AirlineName = "emirates"
-	BritishAirwayName AirlineName = "british_airways"
-	AirFranceName AirlineName = "air_france"
+	AmericanAirlineName     AirlineName = "american_airlines"
+	DeltaAirLineName        AirlineName = "delta_air_lines"
+	UnitedAirlineName       AirlineName = "united_airlines"
+	LufthansaName           AirlineName = "lufthansa"
+	EmirateName             AirlineName = "emirates"
+	BritishAirwayName       AirlineName = "british_airways"
+	AirFranceName           AirlineName = "air_france"
 	CathayPacificAirwayName AirlineName = "cathay_pacific_airways"
-	QantasAirwayName AirlineName = "qantas_airways"
-	SingaporeAirlineName AirlineName = "singapore_airlines"
+	QantasAirwayName        AirlineName = "qantas_airways"
+	SingaporeAirlineName    AirlineName = "singapore_airlines"
 )
 
 func GetAirlineName(id AirlineID) AirlineName {
@@ -76,16 +75,16 @@ func normalize(text AirlineName) AirlineName {
 // Private Implementation ----------------------------------------------------------------
 
 const (
-	americanAirlinesLogo AirlineLogo = "img/airlines_logo/American_Airlines.png"
-	deltaAirLinesLogo AirlineLogo = "img/airlines_logo/Delta_Air_Lines.png"
-	unitedAirlinesLogo AirlineLogo = "img/airlines_logo/United_Airlines.png"
-	lufthansaLogo AirlineLogo = "img/airlines_logo/Lufthansa.png"
-	emiratesLogo AirlineLogo = "img/airlines_logo/Emirates.png"
-	britishAirwaysLogo AirlineLogo = "img/airlines_logo/British_Airways.png"
-	airFranceLogo AirlineLogo = "img/airlines_logo/Air_France.png"
+	americanAirlinesLogo     AirlineLogo = "img/airlines_logo/American_Airlines.png"
+	deltaAirLinesLogo        AirlineLogo = "img/airlines_logo/Delta_Air_Lines.png"
+	unitedAirlinesLogo       AirlineLogo = "img/airlines_logo/United_Airlines.png"
+	lufthansaLogo            AirlineLogo = "img/airlines_logo/Lufthansa.png"
+	emiratesLogo             AirlineLogo = "img/airlines_logo/Emirates.png"
+	britishAirwaysLogo       AirlineLogo = "img/airlines_logo/British_Airways.png"
+	airFranceLogo            AirlineLogo = "img/airlines_logo/Air_France.png"
 	cathayPacificAirwaysLogo AirlineLogo = "img/airlines_logo/Cathay_Pacific_Airways.png"
-	qantasAirwaysLogo AirlineLogo = "img/airlines_logo/Qantas_Airways.png"
-	singaporeAirlinesLogo AirlineLogo = "img/airlines_logo/Singapore_Airlines.png"
+	qantasAirwaysLogo        AirlineLogo = "img/airlines_logo/Qantas_Airways.png"
+	singaporeAirlinesLogo    AirlineLogo = "img/airlines_logo/Singapore_Airlines.png"
 )
 
 var (
