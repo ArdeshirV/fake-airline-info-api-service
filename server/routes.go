@@ -3,15 +3,16 @@ package server
 import (
 	"fmt"
 	"net/http"
+
 	"github.com/labstack/echo/v4"
 	"github.com/the-go-dragons/fake-airline-info-service/service"
 )
 
 const (
-	ParamTime = "time"
-	ParamCityA = "city_a"
-	ParamCityB = "city_b"
-	ParamCommand = "command"
+	ParamTime     = "time"
+	ParamCityA    = "city_a"
+	ParamCityB    = "city_b"
+	ParamCommand  = "command"
 	ParamFlightNo = "flightno"
 	ParamLogoName = "logo_name"
 	IndexFileName = "data/index.html"

@@ -10,23 +10,23 @@ import (
 	"time"
 
 	"github.com/the-go-dragons/fake-airline-info-service/config"
-	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 	colors "github.com/the-go-dragons/fake-airline-info-service/config/colors"
 	"github.com/the-go-dragons/fake-airline-info-service/config/logos"
+	models "github.com/the-go-dragons/fake-airline-info-service/domain"
 )
 
 const (
-	TimeLayout = "2006-01-02"
-	JSONFile = "data/flight.json"
-	CommandReturn = "return"
+	TimeLayout     = "2006-01-02"
+	JSONFile       = "data/flight.json"
+	CommandReturn  = "return"
 	CommandReserve = "reserve"
 )
 
-type ReserveResponse struct  {
-	Message string        `json:"message"`
-	FlightNo string       `json:"flightno"`
-	Capacity int          `json:"capacity"`
-	RemainingCapacity int `json:"remainingcapacity"`
+type ReserveResponse struct {
+	Message           string `json:"message"`
+	FlightNo          string `json:"flightno"`
+	Capacity          int    `json:"capacity"`
+	RemainingCapacity int    `json:"remainingcapacity"`
 }
 
 func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
@@ -52,7 +52,7 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 		msg := ""
 		dataChanged := false
 		cmd := Normalize(command)
-		switch(cmd) {
+		switch cmd {
 		case CommandReserve:
 			if flights[index].RemainingCapacity > 0 {
 				flights[index].RemainingCapacity--
@@ -80,10 +80,10 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 			}
 			msg += " Remaining capacity updated with new value."
 		}
-		reserveResponse := ReserveResponse {
-			Message: msg,
-			FlightNo: flightNo,
-			Capacity: int(flights[index].Airplane.Capacity),
+		reserveResponse := ReserveResponse{
+			Message:           msg,
+			FlightNo:          flightNo,
+			Capacity:          int(flights[index].Airplane.Capacity),
 			RemainingCapacity: flights[index].RemainingCapacity,
 		}
 		bytes, err := json.Marshal(reserveResponse)
@@ -104,7 +104,7 @@ func GetAirplaneLogoFileName(name string) (string, error) {
 	return string(airlineLogo), nil
 }
 
-func setFlights(flights []models.Flight) (error) {
+func setFlights(flights []models.Flight) error {
 	bytes, err := json.Marshal(flights)
 	if err != nil {
 		return errorHandler("Failed to convert []models.Flight to JSON", err)
@@ -169,8 +169,8 @@ func GetFlightsFromA2B(timeD, cityA, cityB string) ([]models.Flight, error) {
 	}
 	for _, flight := range flights {
 		if AreDatesEqual(flight.DepartureTime, specifiedDate) &&
-		Normalize(cityA) == Normalize(flight.Departure.City.Name) &&
-		Normalize(cityB) == Normalize(flight.Destination.City.Name) {
+			Normalize(cityA) == Normalize(flight.Departure.City.Name) &&
+			Normalize(cityB) == Normalize(flight.Destination.City.Name) {
 			filteredFlights = append(filteredFlights, flight)
 		}
 	}
@@ -214,7 +214,7 @@ func errorHandler(message string, err error) error {
 	errMsg := fmt.Sprintf("%s %v\n", message, err)
 	if config.IsDebugMode() {
 		errMsgColor := fmt.Sprintf("Error: %s%s\n%s%v%s\n",
-		colors.BoldRed, message, colors.Red, err, colors.Normal)
+			colors.BoldRed, message, colors.Red, err, colors.Normal)
 		log.New(os.Stderr, "\n", 1).Print(errMsgColor)
 	}
 	return errors.New(errMsg)
