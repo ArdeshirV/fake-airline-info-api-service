@@ -62,11 +62,17 @@ func listReserveFlightHandler(ctx echo.Context) error {
 		if dataIsNotEnough {
 			return echoStringAsJSON(ctx, http.StatusBadRequest, errMsg)
 		} else {
-			msg, err := service.SetRemainingCapacity(flightNo, command)
+			msg, err, worked := service.SetRemainingCapacity(flightNo, command)
 			if err != nil {
 				return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 			}
-			return echoJSON(ctx, http.StatusOK, msg)
+			var status int
+			if worked {
+				status = http.StatusOK
+			} else {
+				status = 400
+			}
+			return echoJSON(ctx, status, msg)
 		}
 	}
 	return echoStringAsJSON(ctx, http.StatusBadRequest, "bad request!")

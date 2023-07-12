@@ -29,11 +29,11 @@ type ReserveResponse struct {
 	RemainingCapacity int    `json:"remainingcapacity"`
 }
 
-func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
+func SetRemainingCapacity(flightNo string, cmd string) (string, error, bool) {
 	command := string(cmd)
 	flights, err := GetFlights()
 	if err != nil {
-		return "", errorHandler("Failed to read flight data", err)
+		return "", errorHandler("Failed to read flight data", err), false
 	}
 	count := 0
 	index := -1
@@ -47,7 +47,7 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 		if count > 1 {
 			errMsgFmt := "Duplication detected. More than one Flight found FlightNo:%v"
 			errMsg := fmt.Sprintf(errMsgFmt, flightNo)
-			return "", errorHandler(errMsg, err)
+			return "", errorHandler(errMsg, err), false
 		}
 		msg := ""
 		dataChanged := false
@@ -71,12 +71,12 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 			}
 		default:
 			errMsg := fmt.Sprintf("The \"%v\" command is unkown.", command)
-			return "", errorHandler(errMsg, err)
+			return "", errorHandler(errMsg, err), false
 		}
 		if dataChanged {
 			err := setFlights(flights)
 			if err != nil {
-				return "", errorHandler("Failed to set flights data", err)
+				return "", errorHandler("Failed to set flights data", err), false
 			}
 			msg += " Remaining capacity updated with new value."
 		}
@@ -88,12 +88,12 @@ func SetRemainingCapacity(flightNo string, cmd string) (string, error) {
 		}
 		bytes, err := json.Marshal(reserveResponse)
 		if err != nil {
-			return msg, errorHandler("Failed to convert ReserveResponse struct to JSON", err)
+			return msg, errorHandler("Failed to convert ReserveResponse struct to JSON", err), false
 		}
-		return string(bytes), nil
+		return string(bytes), nil, dataChanged
 	}
 	errMsg := "Failed to find specified Flight with FlightNo:%v to reserve/return"
-	return "", errorHandler(fmt.Sprintf(errMsg, flightNo), err)
+	return "", errorHandler(fmt.Sprintf(errMsg, flightNo), err), false
 }
 
 func GetAirplaneLogoFileName(name string) (string, error) {
@@ -122,7 +122,7 @@ func GetAirplanes() ([]models.Airplane, error) {
 	if err != nil {
 		return nil, errorHandler("Failed to read flight data", err)
 	}
-	airplanes := make([]models.Airplane, len(flights))
+	airplanes := make([]models.Airplane, 0)
 	for _, flight := range flights {
 		airplanes = append(airplanes, flight.Airplane)
 	}
