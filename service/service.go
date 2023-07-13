@@ -203,7 +203,7 @@ func GetDepartureDates() ([]time.Time, error) {
 	if err != nil {
 		return nil, errorHandler("Failed to read departure-time data", err)
 	}
-	departureTimes := make([]time.Time, len(flights))
+	departureTimes := make([]time.Time, 0)
 	for _, flight := range flights {
 		departureTimes = append(departureTimes, flight.DepartureTime)
 	}
