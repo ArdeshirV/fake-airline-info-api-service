@@ -5,6 +5,8 @@ import (
 	"net/http"
 
 	"github.com/labstack/echo/v4"
+	"github.com/the-go-dragons/fake-airline-info-service/config"
+	colors "github.com/the-go-dragons/fake-airline-info-service/config/colors"
 	"github.com/the-go-dragons/fake-airline-info-service/service"
 )
 
@@ -29,10 +31,12 @@ func rootRoutes(e *echo.Echo) {
 }
 
 func rootHandler(ctx echo.Context) error {
+	showMsg("/")
 	return ctx.File(IndexFileName)
 }
 
 func findAirlineLogoHandler(ctx echo.Context) error {
+	showMsg("/airline")
 	airlineLogoName := ctx.QueryParam(ParamLogoName)
 	if airlineLogoName == "" {
 		err := fmt.Errorf("the '%v' parameter is required", ParamLogoName)
@@ -46,6 +50,7 @@ func findAirlineLogoHandler(ctx echo.Context) error {
 }
 
 func listReserveFlightHandler(ctx echo.Context) error {
+	showMsg("/reserve_flight")
 	command := ctx.QueryParam(ParamCommand)
 	flightNo := ctx.QueryParam(ParamFlightNo)
 	if command != "" || flightNo != "" {
@@ -79,6 +84,7 @@ func listReserveFlightHandler(ctx echo.Context) error {
 }
 
 func listAirplanesHandler(ctx echo.Context) error {
+	showMsg("/airplanes")
 	data, err := service.GetAirplanes()
 	if err != nil {
 		return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
@@ -87,6 +93,7 @@ func listAirplanesHandler(ctx echo.Context) error {
 }
 
 func listFlightsHandler(ctx echo.Context) error {
+	showMsg("/flights")
 	flightNo := ctx.QueryParam(ParamFlightNo)
 	if flightNo != "" {
 		fliteredFlight, err := service.GetFlightsByFlightNo(flightNo)
@@ -134,6 +141,7 @@ func listFlightsHandler(ctx echo.Context) error {
 }
 
 func listCitiesHandler(ctx echo.Context) error {
+	showMsg("/cities")
 	data, err := service.GetCities()
 	if err != nil {
 		return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
@@ -142,9 +150,16 @@ func listCitiesHandler(ctx echo.Context) error {
 }
 
 func listDepartureDatesHandler(ctx echo.Context) error {
+	showMsg("/departure_dates")
 	data, err := service.GetDepartureDates()
 	if err != nil {
 		return echoErrorAsJSON(ctx, http.StatusInternalServerError, err)
 	}
 	return echoJSON(ctx, http.StatusOK, data)
+}
+
+func showMsg(msg string) {
+	if config.IsDebugMode() {
+		fmt.Printf("%s%s%s\n", colors.Yellow, msg, colors.Normal)
+	}
 }
