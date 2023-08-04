@@ -1,7 +1,7 @@
 # fake-airline-info-service
-## Provides a mock-API for airline information service to test the [final-project](https://github.com/the-go-dragons/final-project)
+Provides a mock-API for airline information service to test the [final-project](https://github.com/the-go-dragons/final-project)
 
-### Installation
+## Installation
 Clone the repository to your local machine using the git clone command.
 ```
 git clone https://github.com/ArdeshirV/fake-airline-info-api-service
@@ -29,7 +29,7 @@ Make sure you have Go installed on your machine. If not, follow the official Go 
 ```make clean```
 
 
-### Deployment
+## Deployment
 To deploy the project using Liara, make sure you have Liara CLI installed. If not, follow the official Liara CLI installation guide [here](https://docs.liara.ir/cli).
 
 #### Set the necessary environment variables for deployment.
